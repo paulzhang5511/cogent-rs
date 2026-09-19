@@ -122,6 +122,8 @@ cog tools
 
 `cogent-skills` 在编译期通过 `include_str!` 嵌入 25 个工程技能，覆盖完整开发生命周期：规格驱动（`spec-driven-development`）、测试驱动（`test-driven-development`）、调试与错误恢复、代码评审、API 设计、安全加固、性能优化、可观测性、CI/CD、发布上线等。
 
+> 这些技能改编自 [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills)（MIT License, Copyright (c) Addy Osmani and contributors）。版权与许可声明见 [`crates/cogent-skills/THIRD_PARTY_NOTICES.md`](crates/cogent-skills/THIRD_PARTY_NOTICES.md)。
+
 - system prompt 注入一张精简「技能路由表」（决策树 + 各技能一句话精髓），模型据此选技能；
 - 选定后通过 `skill(name)` 工具（或 bash 拦截的 `cog-skill <name>` 命令）按需加载该技能完整正文，避免一次性灌满上下文；
 - 技能内容随二进制分发，运行时零网络、零文件 IO。
