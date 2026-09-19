@@ -33,6 +33,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Internal domain blacklist
         run: |
-          if git grep -nEf .github/domain-blacklist.txt -- ':!Cargo.lock'; then
+          # 排除规则定义文件自身（.gitleaks.toml 的 regex、domain-blacklist.txt 的清单），
+          # 它们只是"定义规则/列占位域名"，不是源码中真实出现的内部域名。
+          if git grep -nEf .github/domain-blacklist.txt -- ':!Cargo.lock' ':!.gitleaks.toml' ':!.github/domain-blacklist.txt'; then
             echo "::error::internal domain detected in source"; exit 1
           fi
