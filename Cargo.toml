@@ -90,10 +90,10 @@ similar = "2.6"
 # reqwest 的传递依赖，显式声明以直接引用）
 url = "2"
 
-# 本地子 Crate 间依赖
-cogent-core = { path = "crates/cogent-core" }
-cogent-macros = { path = "crates/cogent-macros" }
-cogent-providers = { path = "crates/cogent-providers" }
-cogent-skills = { path = "crates/cogent-skills" }
-cogent-tools = { path = "crates/cogent-tools" }
+# 本地子 Crate 间依赖（带 version 以便发布到 crates.io；本地开发走 path）
+cogent-core = { path = "crates/cogent-core", version = "0.1.0" }
+cogent-macros = { path = "crates/cogent-macros", version = "0.1.0" }
+cogent-providers = { path = "crates/cogent-providers", version = "0.1.0" }
+cogent-skills = { path = "crates/cogent-skills", version = "0.1.0" }
+cogent-tools = { path = "crates/cogent-tools", version = "0.1.0" }
 cogent-cli = { path = "crates/cogent-cli" }
