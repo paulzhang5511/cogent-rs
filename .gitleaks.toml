@@ -1,0 +1,20 @@
+# gitleaks 配置：阻止内部凭据/域名误提交。
+# 发布前根据实际内部域名/关键词维护本文件与 .github/domain-blacklist.txt。
+title = "Cogent gitleaks config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "internal-domain"
+description = "Internal domain names that must never be committed"
+regex = '''(internal-domain-1|internal-domain-2)'''
+entropy = 0
+secretGroup = 0
+
+[[rules]]
+id = "internal-identity"
+description = "Internal user / machine identifiers"
+regex = '''(internal-user-id|internal-machine-id)'''
+entropy = 0
+secretGroup = 0

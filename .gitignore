@@ -1,0 +1,21 @@
+/target
+
+# 技能源数据（嵌入 crates/cogent-skills/src/skills/ 的原始来源，不入库）
+/agent-skills/
+
+# 测试/运行产物
+/output/
+crates/cogent-core/output/
+*.log
+
+# 临时日志与草稿
+log*.txt
+safe.txt
+/tasks/
+
+# 内部设计/审查文档（PRD、SPEC、架构图、审查报告、配置参考等），不随开源上传。
+# 对外说明仅保留根目录 README.md。
+/docs/
+
+# macOS
+.DS_Store

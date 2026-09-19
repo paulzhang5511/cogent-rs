@@ -1,0 +1,21 @@
+[package]
+name = "cogent-providers"
+description = "Cogent LLM Provider 接入：OpenAI（v1）+ 基于 backoff 的 Retry 装饰器"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+cogent-core = { workspace = true }
+tokio = { workspace = true }
+tokio-stream = { workspace = true }
+futures = { workspace = true }
+async-stream = { workspace = true }
+async-trait = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+reqwest = { workspace = true }
+backoff = { workspace = true }

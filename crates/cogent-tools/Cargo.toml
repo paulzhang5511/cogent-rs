@@ -1,0 +1,27 @@
+[package]
+name = "cogent-tools"
+description = "Cogent 系统工具：Bash、File IO、HTTP（通过 #[cogent_tool] 声明）"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+cogent-core = { workspace = true }
+cogent-macros = { workspace = true }
+cogent-skills = { workspace = true }
+tokio = { workspace = true }
+async-trait = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+schemars = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+encoding_rs = { workspace = true }
+strsim = { workspace = true }
+similar = { workspace = true }
+tracing = { workspace = true }
+reqwest = { workspace = true }
+url = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

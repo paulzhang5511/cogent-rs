@@ -1,0 +1,8 @@
+[package]
+name = "cogent-skills"
+description = "Cogent 内置工程技能：25 个 SKILL.md 编译期嵌入（include_str! 进 .rodata），按需加载到 LLM 上下文"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]

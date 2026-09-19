@@ -1,0 +1,96 @@
+# Cogent 工作区根清单（纯 virtual workspace）。
+#
+# 本文件不定义任何 package，仅声明工作区成员、共享版本与共享依赖。
+# 二进制入口统一收敛到 crates/cogent-cli（命令名 `cog`）。
+#
+# 依赖管理约定：所有第三方依赖在此 [workspace.dependencies] 统一声明版本，
+# 各成员 crate 通过 `dep = { workspace = true }` 引用，确保全工作区版本一致。
+
+[workspace]
+resolver = "2"
+members = [
+    "crates/cogent-core",
+    "crates/cogent-macros",
+    "crates/cogent-providers",
+    "crates/cogent-skills",
+    "crates/cogent-tools",
+    "crates/cogent-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+authors = ["Paul"]
+
+[workspace.dependencies]
+# Tokio 异步运行时与 Futures
+tokio = { version = "1.53", features = ["full"] }
+tokio-stream = "0.1"
+futures = "0.3"
+async-stream = "0.3"
+async-trait = "0.1"
+
+# 序列化与 JSON/Schema
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+schemars = "1.2"
+
+# 错误处理
+anyhow = "1.0"
+thiserror = "2.0"
+
+# 链路追踪与观察
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+
+# OpenTelemetry 桥接（PRD §1.2 可追踪要求）：
+# tracing-opentelemetry 将 tracing span 桥接为 OTel span，
+# opentelemetry-otlp 通过 OTLP 协议导出到任意 OTel 后端。
+# 三者版本需相互兼容，此处锁定一组已知兼容版本。
+tracing-opentelemetry = "0.28"
+opentelemetry = "0.27"
+opentelemetry-otlp = "0.27"
+opentelemetry_sdk = { version = "0.27", features = ["rt-tokio"] }
+
+# 网络请求与 API 接入
+# 注：reqwest 0.13 移除了 0.12 的 `rustls-tls` 别名 feature，改用 `rustls`。
+reqwest = { version = "0.13", default-features = false, features = [
+    "json",
+    "rustls",
+    "stream",
+] }
+backoff = { version = "0.4", features = ["tokio"] }
+
+# CLI 命令行与终端渲染
+clap = { version = "4.6", features = ["derive", "env"] }
+rustyline = "18.0"
+colored = "3.1"
+
+# 过程宏三件套（cogent-macros 使用）
+syn = { version = "2", features = ["full"] }
+quote = "1"
+proc-macro2 = "1"
+
+# 测试用临时文件（cogent-tools 测试隔离）
+tempfile = "3"
+
+# 文件编码检测（GBK/UTF-8/UTF-8-BOM，可靠性增强 encoding-detect 模块）
+encoding_rs = "0.8"
+
+# 模糊匹配（Levenshtein，可靠性增强 error-recovery 模块的最接近匹配）
+strsim = "0.11"
+
+# unified diff 生成（可靠性增强 diff-preview 模块的 diff 预览）
+similar = "2.6"
+
+# URL 解析（SSRF 防护用 url::Host 类型安全识别 IP 字面量；
+# reqwest 的传递依赖，显式声明以直接引用）
+url = "2"
+
+# 本地子 Crate 间依赖
+cogent-core = { path = "crates/cogent-core" }
+cogent-macros = { path = "crates/cogent-macros" }
+cogent-providers = { path = "crates/cogent-providers" }
+cogent-skills = { path = "crates/cogent-skills" }
+cogent-tools = { path = "crates/cogent-tools" }
+cogent-cli = { path = "crates/cogent-cli" }

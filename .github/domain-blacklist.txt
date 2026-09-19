@@ -1,0 +1,5 @@
+# 内部域名黑名单（每行一个正则）。
+# CI 会以 `git grep -nEf` 检查源码/文档中是否出现这些域名。
+# 发布前替换为真实的内部域名清单。
+internal-domain-1
+internal-domain-2

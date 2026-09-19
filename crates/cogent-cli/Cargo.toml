@@ -1,0 +1,32 @@
+[package]
+name = "cogent-cli"
+description = "Cogent CLI 驱动：cog 命令 + REPL + 流式事件渲染器"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "cog"
+path = "src/main.rs"
+
+[dependencies]
+cogent-core = { workspace = true }
+cogent-macros = { workspace = true }
+cogent-providers = { workspace = true }
+cogent-skills = { workspace = true }
+cogent-tools = { workspace = true }
+tokio = { workspace = true }
+futures = { workspace = true }
+async-trait = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+opentelemetry = { workspace = true }
+opentelemetry-otlp = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+clap = { workspace = true }
+rustyline = { workspace = true }
+colored = { workspace = true }
