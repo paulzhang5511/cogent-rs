@@ -156,15 +156,6 @@ cargo tarpaulin --packages cogent-core
 RUST_LOG=debug COGENT_OTEL_ENDPOINT=http://localhost:4317 cog run "..."
 ```
 
-## 文档
-
-- `docs/prd.md` — 产品需求与系统设计（SRS & SDD）
-- `docs/SPEC.md` — 实施规格书（source of truth）
-
-## 贡献
-
-欢迎 Issue 与 PR！提交前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)；所有参与者需遵守 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)。安全漏洞请按 [SECURITY.md](SECURITY.md) 私下报告，勿走公开 Issue。
-
 ## 许可证
 
 基于 [Apache License, Version 2.0](LICENSE) 发布。
