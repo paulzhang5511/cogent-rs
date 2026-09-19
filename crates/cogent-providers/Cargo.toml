@@ -4,6 +4,9 @@ description = "Cogent LLM Provider 接入：OpenAI（v1）+ 基于 backoff 的 R
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
 
 [dependencies]
 cogent-core = { workspace = true }

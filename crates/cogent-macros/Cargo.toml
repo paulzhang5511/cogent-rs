@@ -4,6 +4,9 @@ description = "Cogent 过程宏：#[cogent_tool] 从函数签名生成 Tool 实�
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
 
 [lib]
 proc-macro = true

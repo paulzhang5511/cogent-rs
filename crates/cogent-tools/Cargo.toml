@@ -4,6 +4,9 @@ description = "Cogent 系统工具：Bash、File IO、HTTP（通过 #[cogent_too
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
 
 [dependencies]
 cogent-core = { workspace = true }

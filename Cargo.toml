@@ -21,6 +21,9 @@ members = [
 version = "0.1.0"
 edition = "2024"
 authors = ["Paul"]
+license = "Apache-2.0"
+repository = "https://github.com/paulzhang5511/cogent-rs"
+homepage = "https://github.com/paulzhang5511/cogent-rs"
 
 [workspace.dependencies]
 # Tokio 异步运行时与 Futures

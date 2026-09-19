@@ -4,6 +4,9 @@ description = "Cogent 核心：Trait 契约、强类型状态机、事件总线�
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
 
 [dependencies]
 tokio = { workspace = true }

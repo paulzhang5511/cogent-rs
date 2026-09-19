@@ -4,5 +4,8 @@ description = "Cogent 内置工程技能：25 个 SKILL.md 编译期嵌入（inc
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
 
 [dependencies]
