@@ -18,3 +18,12 @@ description = "Internal user / machine identifiers"
 regex = '''(internal-user-id|internal-machine-id)'''
 entropy = 0
 secretGroup = 0
+
+# 全局豁免：gitleaks 自身配置文件与黑名单清单里"定义规则/列举占位域名"的内容
+# 不是真正泄露（规则正则与黑名单条目会命中自身），需从扫描中排除。
+[allowlist]
+description = "Ignore gitleaks config files (they define the rules and list placeholders)"
+paths = [
+  '''\.gitleaks\.toml''',
+  '''\.github/domain-blacklist\.txt''',
+]
